@@ -1,3 +1,6 @@
 # dotfiles 
 
+Currently contains
+
+ - neovim
 
