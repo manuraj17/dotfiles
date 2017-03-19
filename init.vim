@@ -371,7 +371,7 @@
 
   " The following lightline settings are commented out because currently airline
   " is being used. Lightline is meant to be much lighter in weight. It has to be 
-  " customised manually a bit more as it does not comes configured out of the
+  " customised manually a bit more as it does not come configured out of the
   " box compared to airline. Keeping the settings for now for future reference.
 
   " let g:lightline = {
