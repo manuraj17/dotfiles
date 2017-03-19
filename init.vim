@@ -148,9 +148,9 @@
 " }}}
 
 " searching {{{
+
   set incsearch           " search as characters are entered
   set hlsearch            " highlight matches
-
 
 " }}}
 
@@ -217,10 +217,14 @@
 " }}}
 
 " custom-keymaps {{{
+ 
+  imap ;; <esc>
   
   nnoremap ; :
   nnoremap Q @q  
 
+  " yank file
+  nnoremap <space>yf :%y+<cr>
   " smoothscroll 
   " noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
   " noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
@@ -371,7 +375,7 @@
 
   " The following lightline settings are commented out because currently airline
   " is being used. Lightline is meant to be much lighter in weight. It has to be 
-  " customised manually a bit more as it does not come configured out of the
+  " customised manually a bit more as it does not comes configured out of the
   " box compared to airline. Keeping the settings for now for future reference.
 
   " let g:lightline = {
@@ -538,3 +542,10 @@
   " endif
 
 " }}}
+
+
+
+
+
+
+
