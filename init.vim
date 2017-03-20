@@ -81,7 +81,10 @@
     Plug 'matze/vim-move'
 
     Plug 'mattn/emmet-vim' 
-    
+   
+    " Rust 
+    Plug 'rust-lang/rust.vim'
+
     " Plug 'sheerun/vim-polyglot'
     " Enable any of the following colorschemes  to install them 
 
@@ -223,6 +226,11 @@
   nnoremap ; :
   nnoremap Q @q  
 
+  " noremap l l   " Right
+  " noremap h k   " Up
+  " noremap j j   " Down
+  " noremap k h   " Left 
+
   " yank file
   nnoremap <space>yf :%y+<cr>
   " smoothscroll 
@@ -264,7 +272,7 @@
   nnoremap <space>gs :Gstatus<CR>
   nnoremap <space>gc :Gcommit -v -q<CR>
   nnoremap <space>gt :Gcommit -v -q %:p<CR>
-  nnoremap <space>gv :Gvdiff<CR>
+  nnoremap <space>gd :Gvdiff<CR>
   " nnoremap <space>gd :Gdiff<CR>
   nnoremap <space>ge :Gedit<CR>
   nnoremap <space>gr :Gread<CR>
@@ -322,6 +330,9 @@
   let g:neomake_ruby_enabled_makers = ['rubocop']
 
   filetype plugin indent on
+
+  " Rust 
+  let g:rustfmt_autosave = 1
 " }}}
 
 " airline settings {{{
