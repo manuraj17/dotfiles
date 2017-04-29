@@ -1,4 +1,8 @@
-" Neovim config file 
+"
+" Neovim config file
+" github.com/manuraj17
+"
+"
 
 " plugins {{{
 
