@@ -1,4 +1,8 @@
 #!/bin/bash
+# This is an installer script in progress. 
 
 # nvim 
-ln -s ~/.config/nvim ./init.vim
+# cp ~/.config/nvim ./init.vim
+
+# Copy tmux file to ~/ 
+cp .tmux.conf ~/.tmux.conf
