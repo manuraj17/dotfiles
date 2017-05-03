@@ -223,6 +223,12 @@
 
 " }}}
 
+" editor-settings {{{
+"
+  set noswapfile
+
+" }}}
+
 " custom-keymaps {{{
  
   imap ;; <esc>
