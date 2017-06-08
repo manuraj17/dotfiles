@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Startup script to kill all existing polybar instances and launch new
+kilall polybar
+MONITOR=eDP1  polybar example &
+MONITOR=HDMI1 polybar example &

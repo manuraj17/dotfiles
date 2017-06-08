@@ -10,6 +10,8 @@ BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 VIMDIR="nvim"
 I3DIR="i3"
 TESTDIR="TEST"
+POLYBARDIR="polybar"
+ROFIDIR="rofi"
 
 # Function to check if file exists before symlinking
 # check_if_file_exists(){
@@ -87,50 +89,22 @@ link () {
 
 start
 
+# TODO: Move them to associative array and refactor to a method
+# Following goes under ~/.config directory
 pa "Testing"
-# echo "[*] Testing"
 link ${CONFIGDIR}/${TESTDIR} ${BASEDIR}/${TESTDIR}
 
-# echo "[*] Linking Vim(Neovim) config"
 pa "Linking Vim(Neovim) config" 
 link ${CONFIGDIR}/${VIMDIR} ${BASEDIR}/${VIMDIR}
 
-# echo ${BASEDIR}/${VIMDIR} ${CONFIGDIR}/${VIMDIR}
-# check_if_link_exists ${CONFIGDIR}/${TESTDIR}
-# check_if_link_exists ${CONFIGDIR}/${VIMDIR}
-# create_symlink ${BASEDIR}/${VIMDIR} ${CONFIGDIR}/${VIMDIR}
-
-# echo "[*] Linking i3 config"
 pa "Linking i3 config"
-# link ${CONFIGDIR}/${I3DIR}
 link ${CONFIGDIR}/${I3DIR} ${BASEDIR}/${I3DIR}
-# check_if_link_exists ${CONFIGDIR}/${I3DIR}
-# echo "[*] Linking Polybar config"
+
 pa "Linking Polybar config"
-# echo "[*] Linking Ranger config"
+link ${CONFIGDIR}/${POLYBARDIR} ${BASEDIR}/${POLYBARDIR}
+
 pa "Linking Ranger config"
 
-# if [ -L ${CONFIGDIR}/${TESTDIR} ] ; then 
-# 	echo "Link exists"
-# fi
-# ln -sv ${BASEDIR}/${TESTDIR} ${CONFIGDIR}/${TESTDIR}
-
 end
-
- 
-# ln -sv ${BASEDIR}/init.vim ${VIMDIR}/init.vim
-# ln -sv ./init.vim ${VIM_DIR}/init.vim 
-# if [ -L ${my_link} ] ; then
-#    if [ -e ${my_link} ] ; then
-#       echo "Good link"
-#    else
-#       echo "Broken link"
-#    fi
-# elif [ -e ${my_link} ] ; then
-#    echo "Not a link"
-# else
-#    echo "Missing"
-# fi
-# ln -sv 
 # Copy tmux file to ~/ 
 # cp .tmux.conf ~/.tmux.conf
