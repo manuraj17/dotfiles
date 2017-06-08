@@ -1,8 +1,137 @@
 #!/bin/bash
+
 # This is an installer script in progress. 
+# Script so symlink the config files from git repo to system location
+VERSION='0.1'
 
-# nvim 
-# cp ~/.config/nvim ./init.vim
+# Directories
+CONFIGDIR=$HOME/.config
+BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+VIMDIR="nvim"
+I3DIR="i3"
+TESTDIR="TEST"
 
+# Function to check if file exists before symlinking
+# check_if_file_exists(){
+# 
+# }
+
+start() {
+  # Add some ascii art here
+  echo ""
+  echo "[*] Starting configuration linker"
+  echo ""
+}
+
+end (){
+  echo ""
+  echo "[*] Done linking"
+  echo ""
+}
+
+pa ()
+{
+  echo "[>] $1"
+}
+
+# FUnction to check if the sym link exists before linking
+check_if_link_exists(){
+  
+  # Return values
+  # 0 - Missing
+  # 1 - Good Link
+  # 2 - Broken Link 
+  # 3 - Not a link 
+
+	if [[ -L $1 && -d $1 ]] ; then
+	  if [ -e $1 ] ; then
+      echo 1
+	  else
+      echo 2
+	  fi
+	elif [ -e $1 ] ; then
+    echo 3
+	else
+    echo 0
+	fi
+}
+
+symlink(){
+	ln -sv $1 $2
+	# ln -s $1 $2
+}
+
+link () {
+  pa "Current target directry: $1"
+  value=$(check_if_link_exists $1)
+  
+  # echo $?
+  if [ $value -eq 1 ]
+  then
+	  pa "[*] Link exists and it's good"
+  elif [ $value -eq 2 ]
+  then
+	  pa "[~] Link exists but it's broken"
+  elif [ $value -eq 3 ]
+  then
+	  pa "[!] File exists, but not a link"
+  elif [ $value -eq 0 ]
+  then
+	  pa "[+] Link does not exist, creating symlink"
+    symlink $2 $1
+  else 
+    pa "[!] Error creating Symlink, return code: $?"
+  fi
+
+  echo ""
+}
+
+start
+
+pa "Testing"
+# echo "[*] Testing"
+link ${CONFIGDIR}/${TESTDIR} ${BASEDIR}/${TESTDIR}
+
+# echo "[*] Linking Vim(Neovim) config"
+pa "Linking Vim(Neovim) config" 
+link ${CONFIGDIR}/${VIMDIR} ${BASEDIR}/${VIMDIR}
+
+# echo ${BASEDIR}/${VIMDIR} ${CONFIGDIR}/${VIMDIR}
+# check_if_link_exists ${CONFIGDIR}/${TESTDIR}
+# check_if_link_exists ${CONFIGDIR}/${VIMDIR}
+# create_symlink ${BASEDIR}/${VIMDIR} ${CONFIGDIR}/${VIMDIR}
+
+# echo "[*] Linking i3 config"
+pa "Linking i3 config"
+# link ${CONFIGDIR}/${I3DIR}
+link ${CONFIGDIR}/${I3DIR} ${BASEDIR}/${I3DIR}
+# check_if_link_exists ${CONFIGDIR}/${I3DIR}
+# echo "[*] Linking Polybar config"
+pa "Linking Polybar config"
+# echo "[*] Linking Ranger config"
+pa "Linking Ranger config"
+
+# if [ -L ${CONFIGDIR}/${TESTDIR} ] ; then 
+# 	echo "Link exists"
+# fi
+# ln -sv ${BASEDIR}/${TESTDIR} ${CONFIGDIR}/${TESTDIR}
+
+end
+
+ 
+# ln -sv ${BASEDIR}/init.vim ${VIMDIR}/init.vim
+# ln -sv ./init.vim ${VIM_DIR}/init.vim 
+# if [ -L ${my_link} ] ; then
+#    if [ -e ${my_link} ] ; then
+#       echo "Good link"
+#    else
+#       echo "Broken link"
+#    fi
+# elif [ -e ${my_link} ] ; then
+#    echo "Not a link"
+# else
+#    echo "Missing"
+# fi
+# ln -sv 
 # Copy tmux file to ~/ 
-cp .tmux.conf ~/.tmux.conf
+# cp .tmux.conf ~/.tmux.conf
