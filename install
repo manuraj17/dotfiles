@@ -42,18 +42,17 @@ check_if_link_exists(){
   # 1 - Good Link
   # 2 - Broken Link 
   # 3 - Not a link 
-
-	if [[ -L $1 && -d $1 ]] ; then
+  if [[ -L $1 && -d $1 ]] ; then
 	  if [ -e $1 ] ; then
       echo 1
-	  else
+    else
       echo 2
 	  fi
-	elif [ -e $1 ] ; then
+  elif [ -e $1 ] ; then
     echo 3
-	else
+  else
     echo 0
-	fi
+  fi
 }
 
 symlink(){
