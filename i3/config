@@ -55,7 +55,7 @@ font pango: Menlo 8
 
 # Setting wallpaper 
 exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/caffeine.jpg
-exec --no-startup-id $HOME/.config/polybar/launch.sh
+# exec --no-startup-id $HOME/.config/polybar/launch.sh
 ##
 ##  Workspace definitions
 ##
@@ -379,34 +379,34 @@ mode "$mode_system" {
 bindsym $mod+x mode "$mode_system"
 # New bar config 
 # Start i3bar to display a workspace bar
-# bar {
-#     # position top
-#     # strip_workspace_numbers yes
-#     # tray_output none
-#     # font pango:Economica, FontAwesome 15
-#     # separator_symbol "⋆"
-# 
-#     # status_command i3status -c ~/.config/i3/i3status.conf
-#     # status_command i3blocks -c ~/.config/i3/i3blocks.conf
-#     status_command polybar example 
-#     # use patched i3status
-#     #status_command ~/src/i3status/i3status --config ~/.i3/i3status.conf
-#     #status_command i3bf
-#     #status_command ~/.i3/i3-conky-initscript.sh
-# 
-# 
-#     colors {
-#             background  #212121
-#             statusline  #DDDDDD
-#             separator   #666666
-#             # class             border  backgr. text
-#             focused_workspace   #2B83A6 #2B83A6 #FFFFFF
-#             active_workspace    #212121 #212121 #FFFFFF
-#             inactive_workspace  #212121 #212121 #86888C
-#             urgent_workspace    #2F343A #D64E4E #FFFFFF
-#       }
-# 
-# }
+bar {
+    position top
+    strip_workspace_numbers yes
+    tray_output none
+    font pango:Economica, FontAwesome 8 
+    separator_symbol "⋆"
+
+    # status_command i3status -c ~/.config/i3/i3status.conf
+    status_command i3blocks -c ~/.config/i3/i3blocks.conf
+    # status_command polybar example 
+    # use patched i3status
+    # status_command ~/src/i3status/i3status --config ~/.i3/i3status.conf
+    #status_command i3bf
+    #status_command ~/.i3/i3-conky-initscript.sh
+
+
+    colors {
+            background  #212121
+            statusline  #DDDDDD
+            separator   #666666
+            # class             border  backgr. text
+            focused_workspace   #2B83A6 #2B83A6 #FFFFFF
+            active_workspace    #212121 #212121 #FFFFFF
+            inactive_workspace  #212121 #212121 #86888C
+            urgent_workspace    #2F343A #D64E4E #FFFFFF
+      }
+
+}
 
 bindsym $mod+r mode "   "
 mode "   " {
