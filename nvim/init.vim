@@ -20,8 +20,8 @@
     " Plug 'junegunn/limelight.vim'
     
     " Airline
-    " Plug 'vim-airline/vim-airline'
-    " Plug 'vim-airline/vim-airline-themes'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
     " Plug 'Valloric/YouCompleteMe'
     
     " The git plugin
@@ -40,8 +40,8 @@
     " Autolclose
     Plug 'Raimondi/delimitMate'
     " The powerline plugin and powerline for buffer plugin
-    Plug 'itchyny/lightline.vim'
-    Plug 'taohex/lightline-buffer'
+    " Plug 'itchyny/lightline.vim'
+    " Plug 'taohex/lightline-buffer'
     " Colorscheme
     " Plug 'romainl/Apprentice'
     Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
@@ -54,8 +54,8 @@
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     " Saving session state
     Plug 'tpope/vim-obsession'
-    " Syste clipboard copy
-    Plug 'christoomey/vim-system-copy'
+    " System clipboard copy
+    " Plug 'christoomey/vim-system-copy'
     " Editorconfig
     Plug 'editorconfig/editorconfig-vim'
     " The undo plugin
@@ -88,7 +88,7 @@
     " Plug 'scrooloose/syntastic'
     " Glyphicons for vim
     " Plug 'ryanoasis/vim-devicons'
-    " Plug 'neomake/neomake'
+    Plug 'neomake/neomake'
    
     " Smooth scroll 
     " Plug 'terryma/vim-smooth-scroll'
@@ -112,7 +112,7 @@
     " Enable any of the following colorschemes  to install them 
 
     " Predawn - theme 
-    Plug 'juanedi/predawn.vim'
+    " Plug 'juanedi/predawn.vim'
     
     " happy hacking color scheme
     " Plug 'YorickPeterse/happy_hacking.vim'
@@ -124,13 +124,13 @@
     " Plug 'rakr/vim-two-firewatch'
     
     " Duotone for neovim
-    Plug 'atelierbram/Base2Tone-vim'
+    " Plug 'atelierbram/Base2Tone-vim'
     
     " emacs ported colorscheme
     " Plug 'mswift42/vim-themes'
     
     " Alduin colorscheme
-    Plug 'AlessandroYorba/Alduin'
+    " Plug 'AlessandroYorba/Alduin'
 
     " Vim multiple-line edit
     " Plug 'terryma/vim-multiple-cursors'
@@ -142,15 +142,15 @@
     " Plug 'sjl/badwolf'
     
     " gruvbox theme for lightline 
-    " Plug 'shinchu/lightline-gruvbox.vim'
+    Plug 'shinchu/lightline-gruvbox.vim'
 
     " Pylug 'kristijanhusak/vim-hybrid-material'
     
     " Hybrid colorscheme
-    Plug 'w0ng/vim-hybrid'
+    " Plug 'w0ng/vim-hybrid'
     
     " Lightline hybrid theme
-    Plug 'cocopon/lightline-hybrid.vim'
+    " Plug 'cocopon/lightline-hybrid.vim'
     
     "
     Plug 'josuegaleas/jay'
@@ -158,25 +158,36 @@
     " Previewing RGB 
     Plug 'chrisbra/Colorizer'
   
-    Plug 'xero/blaquemagick.vim'
-    Plug 'davidklsn/vim-sialoquent'
-    Plug 'jacoborus/tender.vim'
-    Plug 'dikiaap/minimalist'
+    " Plug 'xero/blaquemagick.vim'
+    " Plug 'davidklsn/vim-sialoquent'
+    " Plug 'jacoborus/tender.vim'
+    " Plug 'dikiaap/minimalist'
 
-    Plug 'tomasr/molokai'
-    Plug 'chriskempson/base16-vim'
-    Plug 'owickstrom/vim-colors-paramount'
+    " Plug 'tomasr/molokai'
+    " Plug 'chriskempson/base16-vim'
+    " Plug 'owickstrom/vim-colors-paramount'
     Plug 'romainl/Apprentice'
 
     Plug 'chemzqm/vim-easygit'
     Plug 'chemzqm/denite-git'
     Plug 'chemzqm/denite-extra'
 
-    Plug 'w0rp/ale'
+
 
     Plug 'francoiscabrol/ranger.vim'
     Plug 'rbgrouleff/bclose.vim'
 
+    " Asynchronous linting
+    " Plug 'w0rp/ale'
+    " Ultimate snippets 
+    Plug 'SirVer/ultisnips'
+    " Asynchronous autocomplete
+    Plug 'roxma/nvim-completion-manager'
+    Plug 'tpope/vim-vinegar'
+    " Plug 'crusoexia/vim-monokai'
+    Plug 'danilo-augusto/vim-afterglow'
+    Plug 'thoughtbot/vim-rspec'
+    " Plug 'jnurmine/Zenburn'
   call plug#end()
 
 " }}}
@@ -196,6 +207,7 @@
 " editor-settings {{{
 "
   set noswapfile
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 " }}}
 
@@ -234,8 +246,10 @@
   set showmatch           " highlight matching [{()}]i
   set ruler               " shows the line and the column numbers of the cursor  
   set showmatch           " Show matching brackets.
-  set colorcolumn=100
+  set colorcolumn=80
   set scrolloff=999       " Number of context lines above and below the cursor
+  set termguicolors
+
   " highlight whitespace
   " highlight ws ctermbg=grey guibg=red
   
@@ -276,10 +290,16 @@
 
 " Colorscheme {{{
 
+  syntax on
+  " colorscheme afterglow
+  " colorscheme monokai
   " colorscheme Base2Tone_ForestDark
   " colorscheme alduin
   colorscheme apprentice
   " colorscheme gruvbox
+  " colorscheme zenburn
+  " set background=dark
+  " let g:gruvboxd_contrast_dark
   " colorscheme seoul256
   " au ColorScheme * hi Normal ctermbg=none guibg=none
   " hi! Normal ctermbg=NONE guibg=NONE
@@ -301,7 +321,7 @@
   " colorscheme hybrid_reverse
  
   " set background=dark
-  syntax enable           " enable syntax processing
+  " syntax enable           " enable syntax processing
   " colorscheme hybrid
   
   " For jay the settings are as below
@@ -438,8 +458,6 @@
   " Argument wrap - Requires plugin
   " nnoremap <silent> <leader>a :ArgWrap<CR>
 
-  map <leader>v :vsplit<CR>
-
   " Use the "black hole register", "_ to really delete something: "_d.
   " Use "_dP to paste something and keep it available for further pasting.
   nnoremap <leader>d "_d
@@ -449,6 +467,9 @@
   " Escaping out of terminal mode 
   tnoremap <leader>h <C-\><C-n>
 
+  "Remove all trailing whitespace by pressing F5
+  nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
 " }}}
 
 " other-configs {{{
@@ -457,8 +478,8 @@
   
   set nocompatible        " use vim defaults
   " let g:python_host_prog='/usr/bin/python2'
-  set clipboard+=unnamedplus "Enabling clipboard
-  " let g:airline_powerline_fonts = 1
+  " set clipboard+=unnamedplus "Enabling clipboard
+  set clipboard=unnamed
   set encoding=utf-8
 
   " NERDTress File highlighting
@@ -486,7 +507,7 @@
   let g:limelight_priority = -1
 
   " neomake - trying ale
-  " let g:neomake_ruby_enabled_makers = ['rubocop']
+  let g:neomake_ruby_enabled_makers = ['rubocop']
 
   filetype plugin indent on
 
@@ -503,31 +524,32 @@
 
   " Moving to lightline now 
   
-  " if !exists('g:airline_symbols')
-  "   let g:airline_symbols = {}
-  " endif
+  if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+  endif
 
-  " let g:airline_powerline_fonts = 1
+  let g:airline_powerline_fonts = 1
   " the theme
-  " let g:airline_theme = 'gruvbox'
+  " let g:airline_theme = 'zenburn'
+  let g:airline_theme = 'apprentice'
 
-  " let g:airline#extensions#tabline#enabled = 1
+  let g:airline#extensions#tabline#enabled = 1
 
   " unicode symbols
-  " let g:airline_left_sep = '»'
-  " let g:airline_left_sep = '▶'
-  " let g:airline_left_sep = ''
-  " let g:airline_right_sep = '«' 
-  " let g:airline_right_sep = '◀'
-  " let g:airline_right_sep = ''
-  " let g:airline_symbols.linenr = '␊'
-  " let g:airline_symbols.linenr = '␤'
-  " let g:airline_symbols.linenr = '¶'
-  " let g:airline_symbols.branch = '⎇'
-  " let g:airline_symbols.paste = 'ρ'
-  " let g:airline_symbols.paste = 'Þ'
-  " let g:airline_symbols.paste = '∥'
-  " let g:airline_symbols.whitespace = 'Ξ'
+  let g:airline_left_sep = '»'
+  let g:airline_left_sep = '▶'
+  let g:airline_left_sep = ''
+  let g:airline_right_sep = '«' 
+  let g:airline_right_sep = '◀'
+  let g:airline_right_sep = ''
+  let g:airline_symbols.linenr = '␊'
+  let g:airline_symbols.linenr = '␤'
+  let g:airline_symbols.linenr = '¶'
+  let g:airline_symbols.branch = '⎇'
+  let g:airline_symbols.paste = 'ρ'
+  let g:airline_symbols.paste = 'Þ'
+  let g:airline_symbols.paste = '∥'
+  let g:airline_symbols.whitespace = 'Ξ'
 
 " }}}
 
@@ -565,38 +587,39 @@
   " customised manually a bit more as it does not comes configured out of the
   " box compared to airline. Keeping the settings for now for future reference.
 
-   let g:lightline = {
-       \ 'active': {
-       \   'left': [ [ 'mode', 'paste' ],
-       \             [ 'fugitive', 'readonly', 'filename' ] ],
-       \   'right': [ [ 'percent', 'lineinfo' ],
-       \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
-       \ },
-       \ 'colorscheme': 'apprentice', 
-       \ 'subseparator': { 'left': '', 'right': ''},
-       \ 'separator': { 'left': '' , 'right': '' }, 
-       \ 'tabline' : {
-       \ 'left': [ [ 'bufferinfo' ], [ 'bufferbefore', 'buffercurrent', 'bufferafter' ], ],
-       \ 'right': [ [ 'close' ], ],
-       \ },
-       \ 'component_expand': {
-       \ 'buffercurrent': 'lightline#buffer#buffercurrent2',
-       \ },
-       \ 'componenty_type' : {
- 		   \    'buffercurrent': 'tabsel',  
-       \ },
-       \ 'component_function': {
-       \   'fugitive'     : 'LightLineFugitive',
-       \   'bufferbefore' : 'lightline#buffer#bufferbefore',
-       \   'bufferafter'  : 'lightline#buffer#bufferafter',
-       \   'bufferinfo'   : 'lightline#buffer#bufferinfo',
-       \   'gitgutter'    : 'LightLineGitGutter',
-       \   'readonly'     : 'LightLineReadonly',
-       \   'filename'     : 'LightLineFilename',
-       \  }
-       \ }
+  " let g:lightline = {
+  "     \ 'active': {
+  "     \   'left': [ [ 'mode', 'paste' ],
+  "     \             [ 'fugitive', 'readonly', 'filename' ] ],
+  "     \   'right': [ [ 'percent', 'lineinfo' ],
+  "     \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
+  "     \ },
+  "     \ 'colorscheme': 'gruvbox',
+  "     \ 'subseparator': { 'left': '', 'right': ''},
+  "     \ 'separator': { 'left': '' , 'right': '' }, 
+  "     \ 'tabline' : {
+  "     \ 'left': [ [ 'bufferinfo' ], [ 'bufferbefore', 'buffercurrent', 'bufferafter' ], ],
+  "     \ 'right': [ [ 'close' ], ],
+  "     \ },
+  "     \ 'component_expand': {
+  "     \ 'buffercurrent': 'lightline#buffer#buffercurrent2',
+  "     \ },
+  "     \ 'componenty_type' : {
+ 	"    \    'buffercurrent': 'tabsel',  
+  "     \ },
+  "     \ 'component_function': {
+  "     \   'fugitive'     : 'LightLineFugitive',
+  "     \   'bufferbefore' : 'lightline#buffer#bufferbefore',
+  "     \   'bufferafter'  : 'lightline#buffer#bufferafter',
+  "     \   'bufferinfo'   : 'lightline#buffer#bufferinfo',
+  "     \   'gitgutter'    : 'LightLineGitGutter',
+  "     \   'readonly'     : 'LightLineReadonly',
+  "     \   'filename'     : 'LightLineFilename',
+  "     \  }
+  "     \ }
 
    " let g:lightline_hybrid_style = 'plain'
+
    " Reference texts:
    "    \ 'subseparator': { 'left': '', 'right': ''},
    "    \ 'separator': { 'left': '' , 'right': '' },
@@ -606,107 +629,121 @@
    "    \ 'separator': { 'left': '', 'right': '' }, 
    " component_function: {
 
+   " Methods required for lightline, uncomment them when lightline is being
+   " used
+   " function! LightLineModified()
+   "  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+   " endfunction
 
-  function! LightLineModified()
-   return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
-  endfunction
+   "  function! LightLineReadonly()
+   "   return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '' : ''
+   "  endfunction
+   "  function! LightLineFilename()
+   "   return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
+   "        \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
+   "        \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
+   "  endfunction
 
-   function! LightLineReadonly()
-    return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '' : ''
-   endfunction
-   function! LightLineFilename()
-    return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
-         \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
-         \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
-   endfunction
+   "  function! LightLineFilename()
+   "   return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
+   "         \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
+   "         \  &ft == 'unite' ? unite#get_status_string() :
+   "         \  &ft == 'vimshell' ? vimshell#get_status_string() :
+   "         \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
+   "         \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
+   "  endfunction
 
-   function! LightLineFilename()
-    return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
-          \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
-          \  &ft == 'unite' ? unite#get_status_string() :
-          \  &ft == 'vimshell' ? vimshell#get_status_string() :
-          \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
-          \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
-   endfunction
+   "  let g:lightline.enable = {
+   "   \'statusline' : 1,
+   "   \'tabline'    : 1
+   "  \} 
 
-   let g:lightline.enable = {
-    \'statusline' : 1,
-    \'tabline'    : 1
-   \} 
+   "  function! LightLineFugitive()
+   "   if exists("*fugitive#head")
+   "     let mark = " "   " ⎇''   edit here for cool mark
 
-   function! LightLineFugitive()
-    if exists("*fugitive#head")
-      let mark = " "   " ⎇''   edit here for cool mark
+   "     let branch = fugitive#head()
+ " "      return branch !=# '' ? ' '.branch : ''
+   "      return branch !=# '' ? mark.branch : ''
+   "   endif
+   "   return ''
+   "  endfunction
 
-      let branch = fugitive#head()
- "     return branch !=# '' ? ' '.branch : ''
-       return branch !=# '' ? mark.branch : ''
-    endif
-    return ''
-   endfunction
+   "  function! LightLineFugitive()
+   "    if &ft !~? 'vimfiler\|gundo' && exists("*fugitive#head")
+   "     let mark = " "   " ⎇''   edit here for cool mark
+   "     " let mark = '⎇'' '  " edit here for cool mark
+   "     let branch = fugitive#head()
+   "     return branch !=# '' ? mark.branch : ''
+   "   endif
+   "   return ''
+   "  endfunction
 
-   function! LightLineFugitive()
-     if &ft !~? 'vimfiler\|gundo' && exists("*fugitive#head")
-      let mark = " "   " ⎇''   edit here for cool mark
-      " let mark = '⎇'' '  " edit here for cool mark
-      let branch = fugitive#head()
-      return branch !=# '' ? mark.branch : ''
-    endif
-    return ''
-   endfunction
+   "  function! LightLineFileformat()
+   "   return winwidth(0) > 70 ? &fileformat : ''
+   "  endfunction
 
-   function! LightLineFileformat()
-    return winwidth(0) > 70 ? &fileformat : ''
-   endfunction
+   "  function! LightLineFiletype()
+   "   return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
+   "  endfunction
 
-   function! LightLineFiletype()
-    return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
-   endfunction
+   "  function! LightLineFileencoding()
+   "   return winwidth(0) > 70 ? (&fenc !=# '' ? &fenc : &enc) : ''
+   "  endfunction
 
-   function! LightLineFileencoding()
-    return winwidth(0) > 70 ? (&fenc !=# '' ? &fenc : &enc) : ''
-   endfunction
+   "  function! LightLineMode()
+   "   return winwidth(0) > 60 ? lightline#mode() : ''
+   " endfunction
 
-   function! LightLineMode()
-    return winwidth(0) > 60 ? lightline#mode() : ''
-  endfunction
+   " Devicons config for lightline 
+   " function! MyFiletype()
+     "return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+   " endfunction
 
-  " Devicons config for lightline 
-  " function! MyFiletype()
-    "return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
-  " endfunction
+   " function! MyFileformat()
+     "return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+   " endfunction
 
-  " function! MyFileformat()
-    "return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
-  " endfunction
-
-  " lightline-buffer settings
-   let g:lightline_buffer_logo = '☯ '
-   let g:lightline_buffer_readonly_icon = ''
-   let g:lightline_buffer_modified_icon = '✭'
-   let g:lightline_buffer_git_icon = ' '
-   let g:lightline_buffer_ellipsis_icon = '..'
-   let g:lightline_buffer_expand_left_icon = '<'
-   let g:lightline_buffer_expand_right_icon = '>'
-   let g:lightline_buffer_active_buffer_left_icon = '['
-   let g:lightline_buffer_active_buffer_right_icon = ']'
-   let g:lightline_buffer_separator_icon = ''
-   
-   let g:lightline_buffer_show_bufnr = 1
-   let g:lightline_buffer_rotate = 0
-   let g:lightline_buffer_fname_mod = ':t'
-   let g:lightline_buffer_excludes = ['vimfiler']
-   
-   let g:lightline_buffer_maxflen = 30
-   let g:lightline_buffer_maxfextlen = 3
-   let g:lightline_buffer_minflen = 16
-   let g:lightline_buffer_minfextlen = 3
-   let g:lightline_buffer_reservelen = 20
+   " Buffer settings for lightline, uncomment them when lightline is being
+   " used
+   " lightline-buffer settings
+   " let g:lightline_buffer_logo = '☯ '
+   " let g:lightline_buffer_readonly_icon = ''
+   " let g:lightline_buffer_modified_icon = '✭'
+   " let g:lightline_buffer_git_icon = ' '
+   " let g:lightline_buffer_ellipsis_icon = '..'
+   " let g:lightline_buffer_expand_left_icon = '<'
+   " let g:lightline_buffer_expand_right_icon = '>'
+   " let g:lightline_buffer_active_buffer_left_icon = '['
+   " let g:lightline_buffer_active_buffer_right_icon = ']'
+   " let g:lightline_buffer_separator_icon = ''
+   " 
+   " let g:lightline_buffer_show_bufnr = 1
+   " let g:lightline_buffer_rotate = 0
+   " let g:lightline_buffer_fname_mod = ':t'
+   " let g:lightline_buffer_excludes = ['vimfiler']
+   " 
+   " let g:lightline_buffer_maxflen = 30
+   " let g:lightline_buffer_maxfextlen = 3
+   " let g:lightline_buffer_minflen = 16
+   " let g:lightline_buffer_minfextlen = 3
+   " let g:lightline_buffer_reservelen = 20
 
 " }}}
 
 " custom-methods {{{
 
+
+  " Copy Open a new buffer
+  " function! Copen
+	" 	echom 'hola' 
+  " endfunction
+
+	" :lua print(1+1)
+	" vnoremap <C-s> :call !Copen()
+  " vnoremap <C-s> :'<,'>!Copen()
+  " vnoremap <C-s> y:! <C-r>0<Home><right>
+  " vnoremap <C-s> y:! :vnew 
   " Relative numbering
   function! NumberToggle()
     if(&relativenumber == 1)
@@ -806,7 +843,15 @@
     " map <leader>f :Ranger<CR>.
     map <leader>f :RangerWorkingDirectoryNewTab<CR>
 " }}}
-"
+
 " deoplete {{{
     let g:deoplete#enable_at_startup = 1
 " }}}
+
+" rspec-vim {{{
+  map <Leader>t :call RunCurrentSpecFile()<CR>
+  map <Leader>s :call RunNearestSpec()<CR>
+  map <Leader>l :call RunLastSpec()<CR>
+  map <Leader>a :call RunAllSpecs()<CR>
+" }}}
+

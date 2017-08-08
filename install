@@ -97,13 +97,13 @@ link ${CONFIGDIR}/${TESTDIR} ${BASEDIR}/${TESTDIR}
 pa "Linking Vim(Neovim) config" 
 link ${CONFIGDIR}/${VIMDIR} ${BASEDIR}/${VIMDIR}
 
-pa "Linking i3 config"
-link ${CONFIGDIR}/${I3DIR} ${BASEDIR}/${I3DIR}
+# pa "Linking i3 config"
+# link ${CONFIGDIR}/${I3DIR} ${BASEDIR}/${I3DIR}
 
-pa "Linking Polybar config"
-link ${CONFIGDIR}/${POLYBARDIR} ${BASEDIR}/${POLYBARDIR}
+# pa "Linking Polybar config"
+# link ${CONFIGDIR}/${POLYBARDIR} ${BASEDIR}/${POLYBARDIR}
 
-pa "Linking Ranger config"
+# pa "Linking Ranger config"
 
 end
 # Copy tmux file to ~/ 
